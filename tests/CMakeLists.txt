@@ -1008,6 +1008,10 @@ endif()
 add_test(NAME test_mutation
          COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/scripts/test_mutation.sh)
 
+# Mocked package commands and disposable local-install paths; no real installation.
+add_test(NAME test_install_arch
+         COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/../tools/scripts/tests/test-install-arch.sh)
+
 # Regression test for the -maxwarnings truncation bug (see the two
 # -maxwarnings 0 additions above). Drives the real tst_qml invocation
 # resolved via `ctest --show-only`, so it needs the binary dir + this
